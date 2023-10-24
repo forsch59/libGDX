@@ -19,6 +19,8 @@ import com.badlogic.gdx.utils.TimeUtils;
 public class GameScreen implements Screen {
 	final UntitledTetrisGame game;
 
+	Board board;
+
 	Texture dropImage;
 	Texture bucketImage;
 	Sound dropSound;
@@ -30,6 +32,7 @@ public class GameScreen implements Screen {
 	int dropsGathered;
 
 	public GameScreen(final UntitledTetrisGame game) {
+
 		this.game = game;
 
 		// load the images for the droplet and the bucket, 64x64 pixels each
@@ -56,6 +59,13 @@ public class GameScreen implements Screen {
 		// create the raindrops array and spawn the first raindrop
 		raindrops = new Array<Rectangle>();
 		spawnRaindrop();
+
+		board = new Board();
+		board.printBoard();
+		board.update();
+		board.printBoard();
+		board.addTetromino('J');
+		board.printBoard();
 
 	}
 

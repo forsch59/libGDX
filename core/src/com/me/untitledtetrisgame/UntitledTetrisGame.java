@@ -4,7 +4,11 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class UntitledTetrisGame extends Game{
+public class UntitledTetrisGame extends Game {
+
+    // FOR TESTING
+    public final boolean TESTING = true;
+
     public SpriteBatch batch;
     public BitmapFont font;
 
@@ -18,8 +22,8 @@ public class UntitledTetrisGame extends Game{
         font = new BitmapFont(); // use libGDX's default Arial font
 
         mainMenuScreen = new MainMenuScreen(this);
-
         this.setScreen(mainMenuScreen);
+
     }
 
     public void render() {
